@@ -1,0 +1,12 @@
+UVM is consisted of:
+  1. **UVM Test**: The highest level in the UVM hierarchy. The test specifies the verification scenario and configures the environment for the DUT (Device Under Test).
+  2. **UVM Environment (uvm_env)**: Acts as a container for all other UVM components, providing a modular and reusable structure. It typically includes agents, monitors, drivers, and scoreboards.
+  3. **UVM Agent**: Encapsulates the verification components for a specific interface of the DUT. Each agent includes a driver, monitor, and sequencer:
+  4. **Driver (uvm_driver)**: Converts high-level transactions from the sequencer into pin-level signal activity on the DUT.
+  5. **Sequencer (uvm_sequencer)**: Manages and sequences transactions, sending them to the driver. It coordinates the stimulus data flow in the verification process.
+  6. **Monitor (uvm_monitor)**: Observes the DUT’s responses, capturing and analyzing signals or transactions to provide coverage and check for protocol compliance. The monitor is passive and does not drive signals.
+  7. **UVM Transaction**: Represents data packets or protocol transactions sent between the sequencer, driver, and DUT. Transactions encapsulate stimulus and response data.
+  8. **UVM Scoreboard**: Compares expected and actual outputs from the DUT, ensuring the DUT behavior matches the specification.
+  9. **UVM Sequence**: Defines a sequence of transactions or a series of steps to generate stimuli. The sequence runs on the sequencer, which sends data to the driver.
+  10. **UVM Config Database**: Allows passing configuration settings to different UVM components, promoting reuse and modularity.
+  11. **UVM Testbench Top**: The top-level module where UVM components are instantiated and connected, initializing the UVM testbench.
