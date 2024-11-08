@@ -8,4 +8,6 @@ function new(string name = "dff_seq_item"); // No parent as it is not a componen
     `uvm_info("Sequence item class", "Constructor", UVM_MEDIUM)
 endfunction
 
+// No phases as it is an object not a component
+
 endclass
